@@ -6,9 +6,9 @@ function isVowel(c){
     return false
 }
 
-function isConsonnant(c){
-    var consonnants = 'bcdfghjklmnpqrstvxwz';
-    if(consonnants.indexOf(c) != -1 || consonnants.toUpperCase().indexOf(c) != -1){
+function isConsonant(c){
+    var consonants = 'bcdfghjklmnpqrstvxwz';
+    if(consonants.indexOf(c) != -1 || consonants.toUpperCase().indexOf(c) != -1){
         return true;
     }
     return false;
@@ -19,7 +19,7 @@ function francaisIntoJavanais(word){
     var francaisIntoJavanais = '';
     while(i < word.length){
         if (i == 0 && isVowel(word[0])) francaisIntoJavanais = 'av' + word[0];
-        else if(isConsonnant(word[i]) && isVowel(word[i+1]) && i != word.length-1) francaisIntoJavanais += word[i] + 'av';
+        else if(isConsonant(word[i]) && isVowel(word[i+1]) && i != word.length-1) francaisIntoJavanais += word[i] + 'av';
         else francaisIntoJavanais += word[i];
         i++;
     }
